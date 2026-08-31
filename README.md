@@ -1,5 +1,5 @@
 # Algoritmos-Avanzados
-Este repositorio contiene ejercicios del curso de Algoritmos avanzados.
+Este repositorio contiene ejercicios del curso de Algoritmos Avanzados.
 
 ## TEMARIO
 1. [Backtracking](01-backtracking)

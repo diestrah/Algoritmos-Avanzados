@@ -9,4 +9,4 @@ Este repositorio contiene ejercicios del curso de Algoritmos Avanzados.
 5. Algoritmos Evolutivos
 
 ## Material recomendado
-Introduction to the design & analysis of Algorithms - Anany Levitin
+Introduction to the Design & Analysis of Algorithms - Anany Levitin

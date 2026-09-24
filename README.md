@@ -3,7 +3,7 @@ Este repositorio contiene ejercicios del curso de Algoritmos Avanzados.
 
 ## TEMARIO
 1. [Backtracking](01-backtracking)
-2. Programación Dinámica
+2. Programación Dinámica(02-programacion-dinamica)
 3. Heurísticas
 4. Meta Heurísticas
 5. Algoritmos Evolutivos

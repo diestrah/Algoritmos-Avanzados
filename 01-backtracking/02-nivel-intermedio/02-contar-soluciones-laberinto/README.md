@@ -32,6 +32,6 @@ Se encontraron 7 soluciones
 - Se deben explorar las **4 direcciones posibles**: derecha, abajo, izquierda y arriba.
 - Cada celda visitada debe marcarse temporalmente para no volver a recorrerla dentro del mismo camino.
 - Al terminar de explorar un camino (haya llegado o no al destino), se debe **deshacer la marca** de la celda visitada, incluyendo la celda destino, para permitir que otros caminos también puedan usarla y así no perder soluciones válidas.
-- El caso de conteo corresponde a cada vez que se alcanza la posición final `(filaFin, colFin)`.
+- El caso de conteo corresponde a cada vez que se alcanza la posición final `(n-1 , m-1)`.
 
 [Volver al nivel básico](..)

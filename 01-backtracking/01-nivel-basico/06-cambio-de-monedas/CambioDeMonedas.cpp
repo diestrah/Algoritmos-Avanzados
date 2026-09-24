@@ -5,13 +5,6 @@
 /*  Este programa implementa una función que dado un monto, devuelve
 /*  el cambio en monedas de este mismo monto. Para la solución
 /*	se utiliza backtracking
-/*
-/*  Ejemplo:
-/*  Para monto = 5, se genera:
-/*  [1, 1, 1, 1, 1]
-/*  [1, 1, 1, 2]
-/*  [1, 2, 2]
-/*  [5] 
 /*-----------------------------------------------------------------*/
 
 #include <iostream>

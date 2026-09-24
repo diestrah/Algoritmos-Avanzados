@@ -6,12 +6,6 @@
 /* se busquen las posibles combinaciones que resulten en una suma. 
 /* Cada elemento del arreglo puede seleccionarse como máximo una vez.
 /* Se utiliza backtracking en la solución.
-/* 
-/* Ejemplo:
-/* Dado un arreglo [2, 3, 5, 7] y el objetivo de suma = 10, se genera:
-/* [2, 3, 5]
-/* [3, 7]
-/*
 /*--------------------------------------------------------------------------------------*/
 
 #include <iostream>

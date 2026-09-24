@@ -3,18 +3,8 @@
 /* Fecha : 24/08/2026
 /* Descripción:
 /* Este programa implementa una función en la que dado un arreglo de elementos, se genera
-/* todas las permutaciones posibles del arreglo.
-/* Se utiliza backtracking para encontrar la solución.
-/* 
-/* Ejemplo:
-/* Dado un arreglo [1, 2, 3], se generan las permutaciones:
-/* [1, 2, 3]
-/* [1, 3, 2]
-/* [2, 3, 1]
-/* [2, 1, 3]
-/* [3, 1, 2]
-/* [3, 2, 1]
-/*
+/* todas las permutaciones posibles del arreglo. Se utiliza backtracking para encontrar
+/* la solución.
 /*--------------------------------------------------------------------------------------*/
 
 #include <iostream>

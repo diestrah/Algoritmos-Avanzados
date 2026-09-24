@@ -11,14 +11,14 @@ subconjuntos posibles de dicho arreglo, utilizando backtracking.
 Para el array `[1, 2, 3]`, el programa debería imprimir:
 
 ```
-[1, 2, 3] <br>
-[1, 2] <br>
-[1, 3] <br>
-[1] <br>
-[2, 3] <br>
-[2] <br>
-[3] <br>
-[] <br>
+[1, 2, 3] 
+[1, 2] 
+[1, 3] 
+[1] 
+[2, 3] 
+[2] 
+[3] 
+[] 
 ```
 
 ## Restricciones

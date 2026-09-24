@@ -3,16 +3,6 @@
 /* Fecha : 25/08/2026
 /* Descripción:
 /* Este programa implementa una función en la que se calcula las combinaciones de un elemento
-/* 
-/* Ejemplo:
-/* Dado un n = 4 y un k = 2, se genera:
-/* [1, 2]
-/* [1, 3]
-/* [1, 4]
-/* [2, 3]
-/* [2, 4]
-/* [3, 4]
-/*
 /*--------------------------------------------------------------------------------------*/
 
 #include <iostream>

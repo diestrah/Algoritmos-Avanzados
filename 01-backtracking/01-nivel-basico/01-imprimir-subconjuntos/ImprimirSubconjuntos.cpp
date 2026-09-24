@@ -3,20 +3,7 @@
 /* Fecha : 24/08/2026
 /* Descripción:
 /* Este programa implementa una función en la que dado un arreglo de elementos, se genera
-/* todos los subconjuntos posibles.
-/* Se utiliza backtracking para encontrar la solución.
-/* 
-/* Ejemplo:
-/* Dado un arreglo [1, 2, 3], se generan los subconjuntos:
-/* [1, 2, 3]
-/* [1, 2]
-/* [1, 3]
-/* [1]
-/* [2, 3]
-/* [2]
-/* [3]
-/* []
-/*
+/* todos los subconjuntos posibles. Se utiliza backtracking para encontrar la solución.
 /*--------------------------------------------------------------------------------------*/
 
 #include <iostream>

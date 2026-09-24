@@ -5,22 +5,6 @@
 /* Este programa implementa el problema de las N-Reinas utilizando backtracking.
 /* Se busca colocar N reinas en un tablero de N x N de manera que ninguna reina
 /* pueda atacar a otra.
-/*
-/* Para verificar si una posición es válida, se recorren recursivamente las tres
-/* direcciones relevantes: diagonal superior izquierda, vertical superior y
-/* diagonal superior derecha.
-/*
-/* En cada fila se prueba cada columna como posible posición para una reina.
-/* Si una posición es válida, se coloca la reina y se continúa con la siguiente fila.
-/* Si posteriormente no se encuentra una solución, se deshace la decisión y se
-/* prueba una nueva posición.
-/*
-/* Ejemplo:
-/* Para N = 4, existe una solución válida para el problema.
-/* 0 1 0 0
-/* 0 0 0 1
-/* 1 0 0 0
-/* 0 0 1 0
 /*----------------------------------------------------------------------------------*/
 
 #include <iostream>

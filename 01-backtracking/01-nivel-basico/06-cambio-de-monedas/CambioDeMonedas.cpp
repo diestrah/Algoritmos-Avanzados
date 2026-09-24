@@ -63,7 +63,6 @@ int main() {
 	int monedas[] = {1, 2, 5};
 	int n = sizeof(monedas) / sizeof(monedas[0]);
 	int monto = 5;
-
 	vector<int> cambio;
 
 	CambioDeMonedas(monedas, n, monto, cambio, 0);

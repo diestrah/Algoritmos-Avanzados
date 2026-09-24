@@ -21,7 +21,6 @@ Para el laberinto:
 El programa debería imprimir:
 
 ```
-Exito: se llego al final
 2 0 0 0
 2 2 0 1
 0 2 0 0

@@ -1,11 +1,7 @@
-/*----------------------------------------------------------------------------------*/
-/* Autor: Naim Diestra
-/* Fecha: 04/09/2026
-/* Descripcion:
-/* Este programa implementa el problema de las N-Reinas utilizando backtracking.
-/* Se busca colocar N reinas en un tablero de N x N de manera que ninguna reina
-/* pueda atacar a otra.
-/*----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*  Autor : Naim Diestra
+/*  Fecha : 04/09/2026
+/*-----------------------------------------------------------------*/
 
 #include <iostream>
 #include <vector>

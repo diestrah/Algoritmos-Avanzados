@@ -1,30 +1,7 @@
-/*----------------------------------------------------------------------------------*/
-/* Autor: Naim Diestra
-/* Fecha: 03/09/2026
-/* Descripcion:
-/* Este programa compara dos formas de escribir el mismo algoritmo de backtracking
-/* para encontrar una solución dentro de un laberinto, desde (0,0)
-/* hasta (n-1, m-1). Ambas versiones son funcionalmente idénticas; la diferencia
-/* está solo en el estilo de implementación:
-/*
-/*   V1: Explora las 4 direcciones con 4 bloques if escritos a mano
-/*       (derecha, abajo, izquierda, arriba).
-/*
-/*   V2: Explora las mismas 4 direcciones usando un arreglo de desplazamientos
-/*       y un bucle for, evitando la repetición de código.
-/*
-/* Laberinto de ejemplo:
-/*		[1, 0, 0, 0]
-/*		[1, 1, 0, 1]
-/*		[0, 1, 0, 0]
-/*		[1, 1, 1, 1]
-/*
-/* El recorrido es:
-/*		[2, 0, 0, 0]
-/*		[2, 2, 0, 1]
-/*		[0, 2, 0, 0]
-/*		[1, 2, 2, 2]
-/*----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*  Autor : Naim Diestra
+/*  Fecha : 03/09/2026
+/*-----------------------------------------------------------------*/
 
 #include <iostream>
 #include <vector>

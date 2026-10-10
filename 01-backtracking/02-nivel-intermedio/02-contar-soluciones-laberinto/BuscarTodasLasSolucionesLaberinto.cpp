@@ -1,31 +1,8 @@
-/*----------------------------------------------------------------------------------*/
-/* Autor: Naim Diestra
-/* Fecha: 03/09/2026
-/* Descripcion:
-/* Este programa implementa una función que cuenta TODAS las soluciones de un
-/* laberinto, utilizando backtracking. Se considera que llegó al fin cuando
-/* inicia en (0,0) y termina en (n-1, m-1). Los movimientos permitidos son
-/* los 4 ortogonales: derecha, abajo, izquierda, arriba (no diagonales).
-/*
-/* Se muestran dos versiones equivalentes del mismo algoritmo:
-/*   V1: Explora las 4 direcciones con 4 sumas escritas a mano.
-/*   V2: Explora las mismas 4 direcciones usando un arreglo de desplazamientos
-/*       y un bucle for, evitando la repetición de código.
-/*
-/* Nota clave de backtracking: al llegar al destino, se deshace su marca de
-/* "visitado" (laberinto[fila][col] = 1) ANTES de contar y retornar. Si no se
-/* hiciera, otros caminos que también intenten llegar a esa misma celda destino
-/* la encontrarían marcada como visitada y la descartarían como si fuera pared,
-/* perdiendo soluciones válidas.
-/*
-/* Ejemplo:
-/* Para el laberinto
-/*		[1 1 1 0]
-/*  	[1 1 1 1]
-/*  	[0 1 0 1]
-/*  	[1 1 1 1]
-/* Cantidad de soluciones: 7
-/*----------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*  Autor : Naim Diestra
+/*  Fecha : 03/09/2026
+/*-----------------------------------------------------------------*/
+
 #include <iostream>
 #include <vector>
 using namespace std;

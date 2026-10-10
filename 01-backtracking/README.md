@@ -23,4 +23,5 @@ Al finalizar estos ejercicios deberías poder:
  
 ## 👀 Estrategia
 
-Antes de programar, **dibuja el árbol de decisiones** de un ejemplo pequeño. Verás de inmediato dónde está el caso base y dónde conviene podar. 
+Antes de programar, **dibuja el árbol de decisiones** de un ejemplo pequeño. <br>
+Verás de inmediato dónde está el caso base y dónde conviene podar. 

@@ -1,13 +1,15 @@
-# Cambio de Monedas con Backtracking
+# 🪙 Cambio de Monedas con Backtracking
 
-## Enunciado
+🟢 **Dificultad:** Básica · 🧠 **Técnica:** Backtracking (repetición con poda) · ⏱️ **Tiempo:** Exponencial (depende de `monto` y de las monedas) · 💾 **Espacio:** O(monto)
+
+## 📝 Enunciado
 
 Dado un monto y un conjunto de monedas disponibles, implementa una función que 
 genere todas las combinaciones posibles de monedas cuya suma sea igual al 
 monto, utilizando backtracking. Las monedas pueden repetirse dentro de una 
 misma combinación.
 
-## Ejemplo de solución
+## 🧪 Ejemplo de solución
 
 Para `monto = 5` y las monedas `{1, 2, 5}`, el programa debería imprimir:
 
@@ -18,11 +20,12 @@ Para `monto = 5` y las monedas `{1, 2, 5}`, el programa debería imprimir:
 [5]
 ```
 
-## Restricciones
+## 🚧 Restricciones
 
 - La solución debe implementarse **únicamente utilizando backtracking** (agregar una moneda, avanzar, deshacer y probar la siguiente).
+- Todas las monedas deben tener un valor **mayor que `0`**.
 - Una misma moneda **puede repetirse** dentro de una combinación, pero cada nueva llamada recursiva debe comenzar desde la moneda actual en adelante (no se pueden reutilizar monedas anteriores), evitando así generar la misma combinación en distinto orden.
 - El caso base corresponde a cuando la suma acumulada es igual al monto.
 - Se debe **podar** la búsqueda cuando la suma acumulada supera el monto.
 
-[Volver al nivel básico](..)
+⬅️ [Volver al nivel básico](..)

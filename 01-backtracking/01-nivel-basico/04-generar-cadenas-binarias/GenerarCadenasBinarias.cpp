@@ -1,14 +1,7 @@
-/*--------------------------------------------------------------------------------------*/
-/* Autor : Naim Diestra
-/* Fecha : 26/08/2026
-/* Descripción:
-/* Este programa implementa una función en la que dada una cantidad de bits,
-/* se generan todas las combinaciones posibles en binario.
-/* Se debe utilizar backtracking para la solución.
-/* 
-/* Se presentan dos soluciones: una que utiliza un ciclo para explorar las dos 
-/* posibilidades y otra que representa explícitamente cada camino de forma recursiva.
-/*--------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*  Autor : Naim Diestra
+/*  Fecha : 26/08/2026
+/*-----------------------------------------------------------------*/
 
 #include <iostream>
 #include <string>

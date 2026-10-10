@@ -1,11 +1,7 @@
-/*--------------------------------------------------------------------------------------*/
-/* Autor : Naim Diestra
-/* Fecha : 31/08/2026
-/* Descripción:
-/* Este programa implementa una función que, dada la cantidad de parentesis, 
-/* genera todas combinaciones válidas de paréntesis.
-/* Se presentan dos soluciones: una con iteración y otra netamente recursiva.
-/*--------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*  Autor : Naim Diestra
+/*  Fecha : 31/08/2026
+/*-----------------------------------------------------------------*/
 
 #include <iostream>
 #include <string>

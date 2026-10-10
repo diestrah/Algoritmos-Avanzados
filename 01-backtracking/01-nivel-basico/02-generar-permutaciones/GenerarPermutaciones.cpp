@@ -1,11 +1,7 @@
-/*--------------------------------------------------------------------------------------*/
-/* Autor : Naim Diestra
-/* Fecha : 24/08/2026
-/* Descripción:
-/* Este programa implementa una función en la que dado un arreglo de elementos, se genera
-/* todas las permutaciones posibles del arreglo. Se utiliza backtracking para encontrar
-/* la solución.
-/*--------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*  Autor : Naim Diestra
+/*  Fecha : 24/08/2026
+/*-----------------------------------------------------------------*/
 
 #include <iostream>
 using namespace std;

@@ -1,12 +1,7 @@
-/*--------------------------------------------------------------------------------------*/
-/* Autor : Naim Diestra
-/* Fecha : 26/08/2026
-/* Descripción:
-/* Este programa implementa una función en la que dado un arreglo de elementos y un valor
-/* se busquen las posibles combinaciones que resulten en una suma. 
-/* Cada elemento del arreglo puede seleccionarse como máximo una vez.
-/* Se utiliza backtracking en la solución.
-/*--------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------*/
+/*  Autor : Naim Diestra
+/*  Fecha : 26/08/2026
+/*-----------------------------------------------------------------*/
 
 #include <iostream>
 #include <vector>
@@ -24,39 +19,32 @@ void imprimir(const vector<int>& suma){
 	cout << "]\n";
 }
 
-void SumaObjetivo(int arrValores[], int n, int objetivo, vector<int>& arrSuma, int suma){
-	if(suma == objetivo) {
-		imprimir(arrSuma);
+void SumaObjetivo(const int arr[], int n, int objetivo,
+                  int inicio, int suma, vector<int>& actual) {
+	// Caso base: encontramos una combinación
+	if (suma == objetivo) {
+		imprimir(actual);
 		return;
 	}
-	
-	if (suma > objetivo or n < 0) return;
-	
-	// Hacer
-	arrSuma.push_back(arrValores[n]);
-	suma += arrValores[n];
-	
-	// Probamos un camino
-	SumaObjetivo(arrValores, n - 1, objetivo, arrSuma, suma);
-	
-	// Deshacer
-	arrSuma.pop_back();
-	suma -= arrValores[n];
-	
-	// Seguimos otro camino
-	SumaObjetivo(arrValores, n - 1, objetivo, arrSuma, suma);
+
+	for (int i = inicio; i < n; i++) {
+		// Poda: el arreglo está ordenado, ningún elemento posterior cabe
+		if (suma + arr[i] > objetivo) break;
+
+		// Hacer
+		actual.push_back(arr[i]);                                  
+		// Explorar
+		SumaObjetivo(arr, n, objetivo, i + 1, suma + arr[i], actual); 
+		// Deshacer
+		actual.pop_back();                                         
+	}
 }
-	
 
-int main(){
-	
-	int arrValores[N] = {2, 3, 5, 7};
-	int objetivo = 10;
-	int suma = 0;
-	vector<int> arrSuma;
+int main() {
+	int arr[] = {2, 3, 5, 7}; // debe estar ordenado de menor a mayor
+	int n = sizeof(arr) / sizeof(arr[0]);
+	vector<int> actual;
 
-	SumaObjetivo(arrValores, N-1, objetivo, arrSuma ,suma);	
-	
+	SumaObjetivo(arr, n, 10, 0, 0, actual);
 	return 0;
 }
-

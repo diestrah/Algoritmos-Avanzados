@@ -1,10 +1,6 @@
 /*-----------------------------------------------------------------*/
 /*  Autor : Naim Diestra
 /*  Fecha : 27/08/2026
-/*  Descripción:
-/*  Este programa implementa una función que dado un monto, devuelve
-/*  el cambio en monedas de este mismo monto. Para la solución
-/*	se utiliza backtracking
 /*-----------------------------------------------------------------*/
 
 #include <iostream>

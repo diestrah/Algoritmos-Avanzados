@@ -43,7 +43,5 @@ int main() {
     else {
         cout << "No se puede sumar" << endl;
     }
-
-
     return 0;
 }

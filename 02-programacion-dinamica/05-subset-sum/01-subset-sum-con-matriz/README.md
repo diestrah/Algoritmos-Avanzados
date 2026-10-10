@@ -1,6 +1,8 @@
-# Subset Sum (Suma de Subconjunto)
+# 🧮 Subset Sum (Suma de Subconjunto)
 
-## Enunciado
+🟡 **Dificultad:** Intermedia · 🧠 **Técnica:** Bottom-Up (matriz 2D) · ⏱️ **Tiempo:** O(n · objetivo) · 💾 **Espacio:** O(n · objetivo)
+
+## 📝 Enunciado
 
 Dado un arreglo de enteros no negativos y un valor objetivo, 
 implementa una función que determine si **existe un subconjunto** 
@@ -8,16 +10,15 @@ de elementos del arreglo cuya suma sea exactamente igual al objetivo.
 Cada elemento puede utilizarse **como máximo una vez**. 
 Debes resolverlo aplicando **programación dinámica**.
 
-## Ejemplo de ejecución
+## 🧪 Ejemplo de ejecución
 
 Para el arreglo `{2, 3, 5, 7}` y un objetivo `10`, el programa debería imprimir:
 
 Es posible sumar 10
 
-
 Existen subconjuntos que lo logran, como `{2, 3, 5}` o `{3, 7}`. A diferencia del reto de backtracking, aquí solo se responde **si es posible o no**, sin listar las combinaciones.
 
-## Restricciones
+## 🚧 Restricciones
 
 - La solución debe implementarse utilizando **programación dinámica**.
 - Los elementos del arreglo y el objetivo deben ser **no negativos**.
@@ -28,4 +29,4 @@ Existen subconjuntos que lo logran, como `{2, 3, 5}` o `{3, 7}`. A diferencia de
 - La complejidad espacial del algoritmo debe ser **O(n · objetivo)**.
 - Debe imprimir la matriz booleana de estados.
 
-[Volver al índice](..)
+⬅️ [Volver al índice](..)

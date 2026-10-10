@@ -1,19 +1,20 @@
-# Subset Sum con Espacio Optimizado
+# 🪶 Subset Sum con Espacio Optimizado
 
-## Enunciado
+🔴 **Dificultad:** Avanzada · 🧠 **Técnica:** Bottom-Up (arreglo 1D) · ⏱️ **Tiempo:** O(n · objetivo) · 💾 **Espacio:** O(objetivo)
+
+## 📝 Enunciado
 
 Dado un arreglo de enteros no negativos y un valor objetivo, implementa una función que determine si **existe un subconjunto** de elementos del arreglo cuya suma sea exactamente igual al objetivo. Cada elemento puede utilizarse **como máximo una vez**. Debes resolverlo aplicando **programación dinámica**, pero esta vez reduciendo el espacio utilizado: no se permite almacenar una tabla de `n × objetivo`.
 
-## Ejemplo de ejecución
+## 🧪 Ejemplo de ejecución
 
 Para el arreglo `{2, 3, 5, 7}` y un objetivo `10`, el programa debería imprimir:
 
 Es posible sumar 10
 
-
 Existen subconjuntos que lo logran, como `{2, 3, 5}` o `{3, 7}`.
 
-## Restricciones
+## 🚧 Restricciones
 
 - La solución debe implementarse utilizando **programación dinámica** (enfoque Bottom-Up).
 - Los elementos del arreglo y el objetivo deben ser **no negativos**.
@@ -23,4 +24,4 @@ Existen subconjuntos que lo logran, como `{2, 3, 5}` o `{3, 7}`.
 - La complejidad temporal del algoritmo debe ser **O(n · objetivo)**, donde `n` es la cantidad de elementos del arreglo.
 - La complejidad espacial del algoritmo debe ser **O(objetivo)**.
 
-[Volver al índice](..)
+⬅️ [Volver al índice](..)

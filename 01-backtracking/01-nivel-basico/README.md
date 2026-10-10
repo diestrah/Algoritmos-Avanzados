@@ -20,8 +20,9 @@ Al finalizar este nivel deberías poder:
 6. [Cambio de monedas](06-cambio-de-monedas)
 7. [Generar paréntesis válidos](07-generar-parentesis-validos)
 
-## ➡️ Siguiente nivel
+### ➡️ Siguiente nivel
 
 [Nivel intermedio](../02-nivel-intermedio)
 
+<br>
 ⬅️ [Volver al índice](..)

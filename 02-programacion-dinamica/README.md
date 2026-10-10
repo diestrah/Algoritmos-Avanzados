@@ -20,9 +20,9 @@ Al finalizar estos ejercicios deberías poder:
 | # | Ejercicio | Técnica | Dificultad |
 |---|-----------|---------|------------|
 | 1 | [🐇 Fibonacci](01-fibonacci) | Top-Down y Bottom-Up | 🟢 Básica |
-| 2 | [🪜 Escaleras](02-escaleras) | Tabla 1D | 🟢 Básica |
+| 2 | [🪜 Escaleras](02-escaleras) | Arreglo 1D | 🟢 Básica |
 | 3 | [💰 Suma máxima sin consecutivos](03-suma-maxima-sin-consecutivos) | Tabla 1D | 🟡 Intermedia |
-| 4 | [🏷️ Costo mínimo](04-costo-minimo) | Tabla 1D | 🟡 Intermedia |
+| 4 | [🏷️ Costo mínimo](04-costo-minimo) | Arreglo 1D | 🟡 Intermedia |
 | 5 | [🎒 Subset Sum](05-subset-sum) | Matriz y optimización de espacio | 🔴 Avanzada |
 | 6 | [🔤 Subcadena palíndroma más larga](06-subcadena-palindroma-mas-larga) | Matriz 2D | 🔴 Avanzada |
 

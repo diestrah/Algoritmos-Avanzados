@@ -21,6 +21,7 @@ string buscarPalindromo(const string& palabra) {
     int mejorInicio = 0;
     int mejorLongitud = 1;
 
+    // Inicializamos la matriz. Toda palabra de 1 carácter es palíndroma.
     for (int i = 0; i < size; i++) {
         dp[i][i] = 1;
     }

@@ -63,4 +63,14 @@ El nodo rojo indica la ciudad inicial. Se muestran únicamente las conexiones de
 - La distancia de una ciudad a sí misma es `0`; las demás distancias son enteros **positivos**.
 - Cada ciudad debe aparecer exactamente una vez en la ruta, excepto la inicial, que también aparece al final para cerrar el recorrido.
 - Si dos ciudades candidatas están a la misma distancia, se debe elegir la de **menor índice**.
-- La distancia total debe incluir
+- La distancia total debe incluir el regreso a la ciudad inicial.
+- No se permite utilizar fuerza bruta, backtracking ni programación dinámica.
+
+## ✍️ Para analizar
+
+- Explica el criterio voraz elegido.
+- Analiza la complejidad temporal y espacial de tu implementación.
+- ¿Cambiar la ciudad inicial puede modificar la distancia total obtenida?
+- Determina si el criterio garantiza encontrar la ruta más corta para cualquier matriz que cumpla las suposiciones. Justifica tu respuesta.
+
+⬅️ [Volver al índice](..)

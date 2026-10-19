@@ -21,40 +21,49 @@ Ruta: 0 -> 1 -> 3 -> 4 -> 2 -> 5 -> 0
 Distancia total: 80
 ```
 
-En cada paso se comparan únicamente las ciudades que todavía no se han visitado:
-
-| Paso | Ciudad actual | Distancias a ciudades no visitadas | Elección |
-|---|---|---|---|
-| 1 | `0` | `1`: 10, `2`: 15, `3`: 20, `4`: 25, `5`: 30 | Ciudad `1`, distancia 10 |
-| 2 | `1` | `2`: 35, `3`: 12, `4`: 28, `5`: 40 | Ciudad `3`, distancia 12 |
-| 3 | `3` | `2`: 30, `4`: 8, `5`: 22 | Ciudad `4`, distancia 8 |
-| 4 | `4` | `2`: 9, `5`: 18 | Ciudad `2`, distancia 9 |
-| 5 | `2` | `5`: 11 | Ciudad `5`, distancia 11 |
-| 6 | `5` | Todas las ciudades ya fueron visitadas. | Regresar a `0`, distancia 30 |
-
-La distancia total es:
-
-```text
-10 + 12 + 8 + 9 + 11 + 30 = 80
-```
-
-Aunque desde la ciudad `4` la ciudad `3` está más cerca que la `2`, no se puede elegir porque **ya fue visitada**. El regreso a la ciudad inicial se realiza únicamente después de visitar todas las demás.
-
-## 🗺️ Mapa del recorrido
+## 🗺️ Mapa de ciudades
 
 ```mermaid
-flowchart LR
-    C0((0)) -->|"1º · 10"| C1((1))
-    C1 -->|"2º · 12"| C3((3))
-    C3 -->|"3º · 8"| C4((4))
-    C4 -->|"4º · 9"| C2((2))
-    C2 -->|"5º · 11"| C5((5))
-    C5 -->|"6º · 30"| C0
+flowchart TB
+    C0((Ciudad 0))
+    C1((Ciudad 1))
+    C2((Ciudad 2))
+    C3((Ciudad 3))
+    C4((Ciudad 4))
+    C5((Ciudad 5))
 
-    linkStyle 0,1,2,3,4,5 stroke:#e53935,stroke-width:3px
-    style C0 fill:#fff3cd,stroke:#e53935,stroke-width:3px
+    C0 ---|10| C1
+    C0 ---|15| C2
+    C0 ---|20| C3
+    C0 ---|25| C4
+    C0 ---|30| C5
+
+    C1 ---|35| C2
+    C1 ---|12| C3
+    C1 ---|28| C4
+    C1 ---|40| C5
+
+    C2 ---|30| C3
+    C2 ---|9| C4
+    C2 ---|11| C5
+
+    C3 ---|8| C4
+    C3 ---|22| C5
+
+    C4 ---|18| C5
+
+    classDef ciudad fill:#a9d7f5,stroke:#263238,stroke-width:2px,color:#000
+    classDef origen fill:#f5a9a9,stroke:#263238,stroke-width:2px,color:#000
+
+    class C1,C2,C3,C4,C5 ciudad
+    class C0 origen
+
+    linkStyle default stroke:#555,stroke-width:1px
 ```
 
-- 🔴 **Flechas rojas:** la ruta construida por la heurística, numerada según el orden del recorrido y con la distancia de cada tramo.
-- 🟡 **Nodo con relleno amarillo:** la ciudad de partida, a la que se regresa al final.
-- Para facilitar la lectura, el mapa muestra únicamente las conexiones utilizadas. Las demás distancias aparecen en la matriz.
+- 🔴 **Ciudad roja:** punto de partida y regreso.
+- 🔵 **Ciudades azules:** las demás ciudades que deben visitarse.
+- **Líneas sin flechas:** conexiones que pueden recorrerse en ambos sentidos.
+- **Número sobre cada conexión:** distancia entre las dos ciudades.
+
+⬅️ [Volver al índice](..)

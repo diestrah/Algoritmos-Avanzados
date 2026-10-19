@@ -23,7 +23,7 @@ Para `monto = 5` y las monedas `{1, 2, 5}`, el programa debería imprimir:
 ## 🚧 Restricciones
 
 - La solución debe implementarse **únicamente utilizando backtracking** (agregar una moneda, avanzar, deshacer y probar la siguiente).
-- Todas las monedas deben tener un valor **mayor que `0`**.
+- Todas las monedas deben tener un valor **mayor que `0`** y encontrarse **ordenadas de menor a mayor**.
 - Una misma moneda **puede repetirse** dentro de una combinación, pero cada nueva llamada recursiva debe comenzar desde la moneda actual en adelante (no se pueden reutilizar monedas anteriores), evitando así generar la misma combinación en distinto orden.
 - El caso base corresponde a cuando la suma acumulada es igual al monto.
 - Se debe **podar** la búsqueda cuando la suma acumulada supera el monto.

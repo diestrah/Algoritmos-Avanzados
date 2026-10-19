@@ -32,25 +32,25 @@ void GenerarParentesisValidosV1(string& cadena, int numParentesis, int cantAbier
 	
 
 // Solución netamente recursiva
-void GenerarParentesisValidosV2(string& cadena, int numParentesis, int cantAbiertos, int cantCerrados){
+void GenerarParentesisValidos(string& cadena, int numParentesis, int abiertos, int cantCerrados){
 	// Caso base
-	if (cantAbiertos == cantCerrados and cadena.size() == numParentesis * 2) {
+	if (abiertos == cantCerrados and cadena.size() == numParentesis * 2) {
 		cout << cadena << endl;
 		return;
 	}
 	// Condiciones de poda
-	if (cantAbiertos > numParentesis or 
+	if (abiertos > numParentesis or
 		cantCerrados > numParentesis or 
-		cantCerrados > cantAbiertos) return;
+		cantCerrados > abiertos) return;
 	
-	if (cantAbiertos < numParentesis) {
+	if (abiertos < numParentesis) {
 		cadena.push_back('('); // hacer
-		GenerarParentesisValidosV2(cadena, numParentesis, cantAbiertos + 1, cantCerrados);
+		GenerarParentesisValidos(cadena, numParentesis, abiertos + 1, cantCerrados);
 		cadena.pop_back(); // deshacer
 	}
-	if (cantCerrados < cantAbiertos) {
+	if (cantCerrados < abiertos) {
 		cadena.push_back(')'); // hacer
-		GenerarParentesisValidosV2(cadena, numParentesis, cantAbiertos, cantCerrados + 1);
+		GenerarParentesisValidos(cadena, numParentesis, abiertos, cantCerrados + 1);
 		cadena.pop_back(); // deshacer
 	}
 }
@@ -62,6 +62,6 @@ int main() {
 	int numParentesis = 3;
 	
 	GenerarParentesisValidosV1(cadena, numParentesis, cantAbiertos, cantCerrados);	
-	GenerarParentesisValidosV2(cadena, numParentesis, cantAbiertos, cantCerrados);	
+	GenerarParentesisValidos(cadena, numParentesis, cantAbiertos, cantCerrados);
 	return 0;
 }

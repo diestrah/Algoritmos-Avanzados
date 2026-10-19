@@ -15,8 +15,8 @@ Al finalizar este nivel deberías poder:
 1. [Generar cadenas binarias](01-generar-cadenas-binarias)
 2. [Generar permutaciones](02-generar-permutaciones)
 3. [Generar combinaciones](03-generar-combinaciones)
-4. [Cambio de monedas](04-cambio-monedas)
-5. [Suma objetivo](05-suma-objetivo)
+4. [Suma objetivo](04-suma-objetivo)
+5. [Cambio de monedas](05-cambio-monedas)
 6. [Imprimir subconjuntos](06-imprimir-subconjuntos)
 7. [Generar paréntesis válidos](07-generar-parentesis-validos)
 

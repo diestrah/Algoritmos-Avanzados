@@ -41,10 +41,3 @@ flowchart LR
 El nodo rojo indica la ciudad inicial. Se muestran únicamente las conexiones del recorrido; la matriz contiene todas las distancias.
 
 ⬅️ [Volver al índice](..)
-
-- 🔴 **Ciudad roja:** punto de partida y regreso.
-- 🔵 **Ciudades azules:** las demás ciudades que deben visitarse.
-- **Líneas sin flechas:** conexiones que pueden recorrerse en ambos sentidos.
-- **Número sobre cada conexión:** distancia entre las dos ciudades.
-
-⬅️ [Volver al índice](..)

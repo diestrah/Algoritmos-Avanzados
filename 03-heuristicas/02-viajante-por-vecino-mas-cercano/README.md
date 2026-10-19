@@ -1,3 +1,15 @@
+# 🧳 Viajante por Vecino Más Cercano
+
+🟡 **Dificultad:** Intermedia · 🧠 **Técnica:** Heurística voraz · 📐 **Representación:** Matriz de distancias
+
+## 📝 Enunciado
+
+Un viajante debe visitar todas las ciudades exactamente una vez y regresar a la ciudad de partida.
+
+Dada una matriz de distancias entre `n` ciudades y una ciudad inicial, implementa una función que construya una ruta procurando **minimizar la distancia total recorrida**.
+
+Debes identificar y justificar el **criterio voraz** correspondiente al método de vecino más cercano.
+
 ## 🧪 Ejemplo de ejecución
 
 Para la siguiente matriz de distancias entre 6 ciudades (`0` a `5`), partiendo de la ciudad `0`:
@@ -40,4 +52,15 @@ flowchart LR
 
 El nodo rojo indica la ciudad inicial. Se muestran únicamente las conexiones del recorrido; la matriz contiene todas las distancias.
 
-⬅️ [Volver al índice](..)
+## 🚧 Restricciones y suposiciones
+
+- Debes **identificar y justificar el criterio voraz** utilizado.
+- La matriz tiene tamaño `n × n`, con `n ≥ 2`.
+- Las ciudades se identifican con índices de `0` a `n - 1`.
+- La ciudad inicial debe pertenecer al conjunto de ciudades.
+- Existe una conexión directa entre cualquier par de ciudades.
+- La matriz es **simétrica**: la distancia de `i` a `j` es igual a la de `j` a `i`.
+- La distancia de una ciudad a sí misma es `0`; las demás distancias son enteros **positivos**.
+- Cada ciudad debe aparecer exactamente una vez en la ruta, excepto la inicial, que también aparece al final para cerrar el recorrido.
+- Si dos ciudades candidatas están a la misma distancia, se debe elegir la de **menor índice**.
+- La distancia total debe incluir

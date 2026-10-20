@@ -17,7 +17,7 @@ Al finalizar estos ejercicios deberías poder:
 ## 📚 Ejercicios
 
 | # | Ejercicio | Regla heurística | Dificultad |
-|---|-----------|------------------|------------|
+|---|-----------|-----------------|--------------|
 | 1 | [🪙 Cambio de monedas voraz](01-cambio-de-monedas) | Elegir la mayor denominación que quepa | 🟢 Básica |
 | 2 | [🎒 Mochila 0/1 por densidad](02-mochila) | Priorizar mayor valor por unidad de peso | 🟡 Intermedia |
 | 3 | [🛠️ Asignación de tareas a máquinas](03-asignacion-de-tareas) | Asignar las tareas largas a la máquina menos cargada | 🟡 Intermedia |

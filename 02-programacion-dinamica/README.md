@@ -1,6 +1,6 @@
 # 🧩 Programación Dinámica
 
-Resolver un problema grande a partir de subproblemas más pequeños, **guardando sus resultados para no recalcularlos**. 💡
+Resolver un problema grande a partir de subproblemas más pequeños, **guardando sus resultados para no recalcularlos**. 
 
 > 🔁 Si un subproblema se repite, ¡guárdalo!
 
@@ -26,6 +26,7 @@ Al finalizar estos ejercicios deberías poder:
 | 5 | [🎒 Subset Sum](05-subset-sum) | Matriz y optimización de espacio | 🔴 Avanzada |
 | 6 | [🔤 Subcadena palíndroma más larga](06-subcadena-palindroma-mas-larga) | Matriz 2D | 🔴 Avanzada |
 
-## 💪 ¡A practicar!
-
-Intenta resolver cada ejercicio por tu cuenta antes de revisar la solución. En programación dinámica, **dibujar la tabla a mano** ayuda muchísimo. ✍️
+## 💡Nota:
+Intenta resolver cada ejercicio por tu cuenta antes de revisar la solución. En programación dinámica, **dibujar la tabla a mano** ayuda muchísimo. 
+<br>
+⬅️ [Volver al índice](..)

@@ -26,5 +26,5 @@ Al finalizar estos ejercicios deberías poder:
 Antes de programar, **dibuja el árbol de decisiones** de un ejemplo pequeño. <br>
 Verás de inmediato dónde está el caso base y dónde conviene podar. 
 
-<br><br>
+<br>
 ⬅️ [Volver al índice](..)

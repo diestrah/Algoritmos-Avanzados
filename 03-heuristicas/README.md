@@ -1,6 +1,6 @@
 # 🧭 Heurísticas
 
-Una **heurística** es una regla práctica que encuentra una **buena solución rápidamente**, sin garantizar que sea la óptima. En estos ejercicios, la regla es un **criterio voraz**: en cada paso se toma la mejor decisión local, sin retroceder. ⚡
+Una **heurística** es una regla práctica que encuentra una **buena solución rápidamente**, sin garantizar que sea la óptima. En estos ejercicios, la regla es un **criterio voraz**: en cada paso se toma la mejor decisión local, sin retroceder.
 
 > 🎯 Decidir rápido, sin mirar atrás.
 
@@ -28,4 +28,7 @@ Al finalizar estos ejercicios deberías poder:
 
 ## ⚠️ Nota:
 
-Una heurística voraz **no siempre encuentra la solución óptima**. Prueba cada ejercicio con varios casos y compara tu resultado con el mejor posible. ✍️
+Una heurística voraz **no siempre encuentra la solución óptima**. Prueba cada ejercicio con varios casos y compara tu resultado con el mejor posible. 
+<br><br>
+
+⬅️ [Volver al índice](..)

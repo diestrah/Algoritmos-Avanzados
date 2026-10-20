@@ -16,19 +16,18 @@ Al finalizar estos ejercicios deberías poder:
 
 ## 📚 Ejercicios
 
-| # | Ejercicio | Regla heurística | Dificultad |
-|---|-----------|-----------------|--------------|
-| 1 | [🪙 Cambio de monedas voraz](01-cambio-de-monedas) | Elegir la mayor denominación que quepa | 🟢 Básica |
-| 2 | [🎒 Mochila 0/1 por densidad](02-mochila) | Priorizar mayor valor por unidad de peso | 🟡 Intermedia |
-| 3 | [🛠️ Asignación de tareas a máquinas](03-asignacion-de-tareas) | Asignar las tareas largas a la máquina menos cargada | 🟡 Intermedia |
-| 4 | [🧳 Viajante por vecino más cercano](04-viajante-por-vecino-mas-cercano) | Visitar la ciudad no visitada más próxima | 🟡 Intermedia |
-| 5 | [🎨 Coloreo voraz de grafos](05-coloreo-voraz-de-grafos) | Asignar a cada vértice el menor color disponible entre sus vecinos ya coloreados | 🔴 Avanzada |
-| 6 | [📦 Empaquetamiento en contenedores](06-empaquetamiento-de-contenedores) | Colocar objetos de mayor a menor en el primer contenedor donde quepan | 🟡 Intermedia |
-| 7 | [✂️ Corte en una dimensión](07-corte-en-una-dimension) | Cortar primero la pieza de mayor valor por unidad de longitud | 🟡 Intermedia |
+| # | Ejercicio | Regla heurística | Representación | Dificultad |
+|---|-----------|------------------|----------------|------------|
+| 1 | [🪙 Cambio de monedas voraz](01-cambio-de-monedas) | Elegir la mayor denominación que quepa | Vector de denominaciones | 🟢 Básica |
+| 2 | [🎒 Mochila 0/1 por densidad](02-mochila) | Priorizar mayor valor por unidad de peso | Vector de objetos | 🟡 Intermedia |
+| 3 | [🛠️ Asignación de tareas a máquinas](03-asignacion-de-tareas) | Asignar las tareas largas a la máquina menos cargada | Vectores de tareas y cargas | 🟡 Intermedia |
+| 4 | [🧳 Viajante por vecino más cercano](04-viajante-por-vecino-mas-cercano) | Visitar la ciudad no visitada más próxima | Matriz de distancias | 🟡 Intermedia |
+| 5 | [🎨 Coloreo voraz de grafos](05-coloreo-voraz-de-grafos) | Asignar a cada vértice el menor color disponible entre sus vecinos ya coloreados | Matriz de adyacencia | 🔴 Avanzada |
+| 6 | [📦 Empaquetamiento en contenedores](06-empaquetamiento-de-contenedores) | Colocar objetos de mayor a menor en el primer contenedor donde quepan | Vectores de objetos y capacidades restantes | 🟡 Intermedia |
+| 7 | [✂️ Corte en una dimensión](07-corte-en-una-dimension) | Cortar primero la pieza de mayor valor por unidad de longitud | Vectores de longitudes y valores | 🟡 Intermedia |
 
-## ⚠️ Nota:
+## ⚠️ Recuerda
 
-Una heurística voraz **no siempre encuentra la solución óptima**. Prueba cada ejercicio con varios casos y compara tu resultado con el mejor posible. 
-<br><br>
-
+Una heurística voraz **no siempre encuentra la solución óptima**. Prueba cada ejercicio con varios casos y compara tu resultado con el mejor posible.
+<br>
 ⬅️ [Volver al índice](..)

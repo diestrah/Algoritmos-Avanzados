@@ -28,5 +28,5 @@ Al finalizar estos ejercicios deberías poder:
 
 ## 💡Nota:
 Intenta resolver cada ejercicio por tu cuenta antes de revisar la solución. En programación dinámica, **dibujar la tabla a mano** ayuda muchísimo. 
-<br>
+<br> <br>
 ⬅️ [Volver al índice](..)

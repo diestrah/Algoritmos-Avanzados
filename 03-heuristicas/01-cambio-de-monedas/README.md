@@ -31,10 +31,4 @@ Monto pendiente: 0
 - Si el procedimiento no completa el cambio, se deben mostrar las monedas seleccionadas y el monto pendiente.
 - No se permite utilizar fuerza bruta, backtracking ni programación dinámica.
 
-## ✍️ Para analizar
-
-- Explica el criterio voraz elegido.
-- ¿Puedes completar el monto del ejemplo utilizando menos monedas que las mostradas? 
-- Determina si tu criterio garantiza utilizar la menor cantidad de monedas para cualquier conjunto de denominaciones.
-
 ⬅️ [Volver al índice](..)

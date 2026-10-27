@@ -36,7 +36,9 @@ Distancia total: 80
 
 ![Recorrido del viajante por vecino más cercano](img/recorrido-viajante.svg)
 
-El nodo rojo indica la ciudad inicial. Los números sobre las conexiones representan las distancias. Se muestran únicamente las conexiones del recorrido; la matriz contiene todas las distancias.
+El nodo rojo indica la ciudad inicial. <br> 
+Los números sobre las conexiones representan las distancias. <br> 
+Se muestran únicamente las conexiones del recorrido; la matriz contiene todas las distancias.
 
 ## 🚧 Restricciones y suposiciones
 

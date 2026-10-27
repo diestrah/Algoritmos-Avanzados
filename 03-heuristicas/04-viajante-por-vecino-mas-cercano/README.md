@@ -54,11 +54,4 @@ Se muestran únicamente las conexiones del recorrido; la matriz contiene todas l
 - La distancia total debe incluir el regreso a la ciudad inicial.
 - No se permite utilizar fuerza bruta, backtracking ni programación dinámica.
 
-## ✍️ Para analizar
-
-- Explica el criterio voraz elegido.
-- Analiza la complejidad temporal y espacial de tu implementación.
-- ¿Cambiar la ciudad inicial puede modificar la distancia total obtenida?
-- Determina si el criterio garantiza encontrar la ruta más corta para cualquier matriz que cumpla las suposiciones. Justifica tu respuesta.
-
 ⬅️ [Volver al índice](..)

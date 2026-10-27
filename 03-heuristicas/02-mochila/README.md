@@ -34,7 +34,7 @@ Capacidad restante: 5
 
 ## 🚧 Restricciones y suposiciones
 
-- Se debe **identificar y justificar el criterio voraz** utilizado.
+- Se debe **justificar el criterio voraz** utilizado.
 - La capacidad de la mochila es un entero **mayor o igual que cero**.
 - Los pesos y valores de los objetos son enteros **positivos**.
 - Los identificadores de los objetos son únicos.

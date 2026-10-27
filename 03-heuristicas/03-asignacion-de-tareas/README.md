@@ -50,9 +50,4 @@ Tiempo para completar todas las tareas: 18
 - Una máquina sin tareas asignadas tiene una carga igual a `0`.
 - No se permite utilizar fuerza bruta, backtracking ni programación dinámica.
 
-## ✍️ Para analizar
-
-- ¿Puedes distribuir las tareas del ejemplo para terminar antes del tiempo mostrado?
-- ¿Tener cargas iguales en todas las máquinas siempre es posible?
-
 ⬅️ [Volver al índice](..)

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-labelledby="titulo descripcion">
+<title id="titulo">Grafo de ocho vértices</title>
+<desc id="descripcion">Aristas: A-C, A-D, A-F, A-G, B-C, B-E, C-F, C-H y D-E.</desc>
+<rect width="480" height="300" rx="16" fill="white"/>
+<g stroke="#475569" stroke-width="2.5" fill="none">
+<path d="M145 75 L145 225"/><path d="M145 75 L335 75 L390 150 L335 225 L145 225 L90 150 Z"/>
+<path d="M145 75 L50 35 M145 225 L430 265"/>
+</g>
+<g fill="#b9def5" stroke="#334155" stroke-width="2">
+<circle cx="145" cy="75" r="23"/><circle cx="335" cy="75" r="23"/>
+<circle cx="390" cy="150" r="23"/><circle cx="335" cy="225" r="23"/>
+<circle cx="145" cy="225" r="23"/><circle cx="90" cy="150" r="23"/>
+<circle cx="50" cy="35" r="23"/><circle cx="430" cy="265" r="23"/>
+</g>
+<g font-family="Arial, sans-serif" font-size="19" font-weight="600" fill="#0f172a" text-anchor="middle" dominant-baseline="central">
+<text x="145" y="75">A</text><text x="335" y="75">D</text>
+<text x="390" y="150">E</text><text x="335" y="225">B</text>
+<text x="145" y="225">C</text><text x="90" y="150">F</text>
+<text x="50" y="35">G</text><text x="430" y="265">H</text>
+</g>
+</svg>
+

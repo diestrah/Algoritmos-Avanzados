@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="345" viewBox="0 0 480 345" role="img" aria-labelledby="titulo descripcion">
+<title id="titulo">Grafo coloreado con tres colores</title>
+<desc id="descripcion">Color 1: A, B, H. Color 2: C, D, G. Color 3: E, F. El triángulo A-C-F requiere tres colores.</desc>
+<rect width="480" height="345" rx="16" fill="white"/>
+<g stroke="#475569" stroke-width="2.5" fill="none">
+<path d="M145 75 L145 225"/><path d="M145 75 L335 75 L390 150 L335 225 L145 225 L90 150 Z"/>
+<path d="M145 75 L50 35 M145 225 L430 265"/>
+</g>
+<g fill="#b9def5" stroke="#334155" stroke-width="2">
+<circle cx="145" cy="75" r="23"/><circle fill="#fdba74" cx="335" cy="75" r="23"/>
+<circle fill="#c4b5fd" cx="390" cy="150" r="23"/><circle cx="335" cy="225" r="23"/>
+<circle fill="#fdba74" cx="145" cy="225" r="23"/><circle fill="#c4b5fd" cx="90" cy="150" r="23"/>
+<circle fill="#fdba74" cx="50" cy="35" r="23"/><circle cx="430" cy="265" r="23"/>
+</g>
+<g font-family="Arial, sans-serif" font-size="19" font-weight="600" fill="#0f172a" text-anchor="middle" dominant-baseline="central">
+<text x="145" y="75">A</text><text x="335" y="75">D</text>
+<text x="390" y="150">E</text><text x="335" y="225">B</text>
+<text x="145" y="225">C</text><text x="90" y="150">F</text>
+<text x="50" y="35">G</text><text x="430" y="265">H</text>
+</g>
+<g font-family="Arial, sans-serif" font-size="13" fill="#0f172a"><circle cx="25" cy="320" r="6" fill="#b9def5"/><text x="38" y="325">1: A, B, H</text><circle cx="185" cy="320" r="6" fill="#fdba74"/><text x="198" y="325">2: C, D, G</text><circle cx="350" cy="320" r="6" fill="#c4b5fd"/><text x="363" y="325">3: E, F</text></g></svg>
+

@@ -46,9 +46,5 @@ Capacidad restante: 5
 - Si ningún objeto cabe en la mochila, se debe mostrar una selección vacía, con peso y valor totales iguales a `0`.
 - No se permite utilizar fuerza bruta, backtracking ni programación dinámica.
 
-## ✍️ Para analizar
-
-- Explica el criterio voraz elegido.
-- ¿Puedes obtener un valor total mayor que el mostrado en el ejemplo sin superar la capacidad?
 
 ⬅️ [Volver al índice](..)

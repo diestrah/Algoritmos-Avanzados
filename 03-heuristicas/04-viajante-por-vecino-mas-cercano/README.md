@@ -32,25 +32,11 @@ El programa debería imprimir:
 Ruta: 0 -> 1 -> 3 -> 4 -> 2 -> 5 -> 0
 Distancia total: 80
 ```
-
 ## 🗺️ Mapa del recorrido
 
-```mermaid
-flowchart LR
-    C0((0)) ---|10| C1((1))
-    C1 ---|12| C3((3))
-    C3 ---|8| C4((4))
-    C4 ---|9| C2((2))
-    C2 ---|11| C5((5))
-    C5 ---|30| C0
+![Recorrido del viajante por vecino más cercano](img/recorrido-viajante.svg)
 
-    classDef ciudad fill:#a9d7f5,stroke:#263238,color:#000
-    classDef origen fill:#f5a9a9,stroke:#263238,color:#000
-    class C1,C2,C3,C4,C5 ciudad
-    class C0 origen
-```
-
-El nodo rojo indica la ciudad inicial. Se muestran únicamente las conexiones del recorrido; la matriz contiene todas las distancias.
+El nodo rojo indica la ciudad inicial. Los números sobre las conexiones representan las distancias. Se muestran únicamente las conexiones del recorrido; la matriz contiene todas las distancias.
 
 ## 🚧 Restricciones y suposiciones
 

@@ -47,7 +47,5 @@ El candidato seleccionado puede variar entre ejecuciones según la semilla utili
 - ¿Qué ocurre con la RCL cuando `α = 0`? ¿Y cuando `α = 1`?
 - ¿Qué sucede si todos los candidatos tienen el mismo tiempo?
 - ¿Aumentar `α` puede reducir la cantidad de integrantes de la RCL?
-- ¿Por qué el candidato seleccionado no necesariamente tiene el menor tiempo?
-- ¿Qué diferencia existe entre elegir al azar dentro de la RCL y hacerlo entre todos los candidatos?
 
 ⬅️ [Volver al índice](..)

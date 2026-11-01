@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
-#include <ctime>        // time
-#include <climits>      // INT_MAX e INT_MIN
-#include <algorithm>    // min y max
-#include <cstdlib>      // srand y rand
+#include <algorithm>    // min(), max()
+#include <ctime>        // time()
+#include <climits>      // INT_MAX, INT_MIN
+#include <cstdlib>      // srand(), rand()
 using namespace std;
 
 #define CIUDAD_INICIAL 0

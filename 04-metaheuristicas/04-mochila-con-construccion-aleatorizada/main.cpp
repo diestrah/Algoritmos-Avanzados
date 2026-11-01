@@ -11,7 +11,6 @@ using namespace std;
 #define ITERACIONES 1000
 
 struct Objeto{
-    int indice;
     char nombre;
     int peso;
     int valor;
@@ -31,8 +30,8 @@ void calcularRazon(vector<Objeto>& objetos) {
     }
 }
 
-vector<Objeto> generarRCL(const vector<Objeto>& objetos,
-                          const vector<bool>& estado, int capacidad) {
+vector<int> generarRCL(const vector<Objeto>& objetos,
+                       const vector<bool>& estado, int capacidad) {
     double minimo = INT_MAX;
     double maximo = INT_MIN;
     bool hayCandidatos = false;
@@ -51,14 +50,14 @@ vector<Objeto> generarRCL(const vector<Objeto>& objetos,
 
     // Razón mínima aceptada: se prefieren valores/peso mayores
     double umbral = maximo - ALFA * (maximo - minimo);
-    vector<Objeto> rcl;
+    vector<int> rcl;
 
     // Construcción de la RCL
     for (int i = 0; i < objetos.size(); i++) {
         if (!estado[i] &&
             objetos[i].peso <= capacidad &&
             objetos[i].valorEntrePeso >= umbral) {
-            rcl.push_back(objetos[i]);
+            rcl.push_back(i);
         }
     }
     return rcl;
@@ -69,17 +68,15 @@ Mochila construirMochila(const vector<Objeto>& objetos) {
     vector<bool> seleccionado(objetos.size(), false);
 
     // Inicializamos la mochila
-    Mochila mochila;
-    mochila.capacidadRestante = CAPACIDAD;
-    mochila.pesoTotal = 0;
-    mochila.valorTotal = 0;
+    Mochila mochila{{}, 0, 0, CAPACIDAD};
 
     while (true) {
-        vector<Objeto> rcl = generarRCL(objetos, seleccionado, mochila.capacidadRestante);
+        vector<int> rcl = generarRCL(objetos, seleccionado, mochila.capacidadRestante);
         if (rcl.empty()) break;
 
-        int indice = rand() % rcl.size();
-        Objeto elegido = rcl[indice];
+        int posicion = rand() % rcl.size();
+        int indice = rcl[posicion];
+        Objeto elegido = objetos[indice];
 
         // Actualizamos los valores de la mochila
         mochila.seleccionados.push_back(elegido);
@@ -88,7 +85,7 @@ Mochila construirMochila(const vector<Objeto>& objetos) {
         mochila.valorTotal += elegido.valor;
 
         // Actualizamos el estado del objeto
-        seleccionado[elegido.indice] = true;
+        seleccionado[indice] = true;
     }
 
     return mochila;
@@ -105,6 +102,7 @@ Mochila construirMochilaConMejorValor(const vector<Objeto>& objetos) {
             mejorMochila = mochila;
         }
     }
+
     return mejorMochila;
 }
 
@@ -124,12 +122,12 @@ void imprimir(const Mochila& mochila) {
 
 int main() {
     vector<Objeto> objetos = {
-        {0, 'A', 30, 120},
-        {1, 'B', 10, 60},
-        {2, 'C', 20, 100},
-        {3, 'D', 25, 90},
-        {4, 'E', 15, 45},
-        {5, 'F', 8, 16},
+        {'A', 30, 120},
+        {'B', 10, 60},
+        {'C', 20, 100},
+        {'D', 25, 90},
+        {'E', 15, 45},
+        {'F', 8, 16},
     };
     calcularRazon(objetos);
     srand(time(nullptr));

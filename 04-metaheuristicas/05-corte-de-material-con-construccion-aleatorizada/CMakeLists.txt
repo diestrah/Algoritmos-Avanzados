@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 4.0)
+project(corte_de_material_con_construccion_aleatorizada)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(corte_de_material_con_construccion_aleatorizada main.cpp)

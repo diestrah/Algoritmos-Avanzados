@@ -94,7 +94,7 @@ Asignacion construirAsignacion(const vector<vector<int>>& matrizTarifas,
 
 Asignacion buscarMejorAsignacion(const vector<vector<int>>& matrizTarifas,
                                  const vector<int>& costosTransporte) {
-    
+
     Asignacion mejorAsignacion{{}, INT_MAX};
 
     for (int iteracion = 0; iteracion < ITERACIONES; iteracion++) {

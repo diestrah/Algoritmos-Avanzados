@@ -48,4 +48,19 @@ El resultado y el orden de selección pueden variar según el criterio, la semil
 - Conserva la selección de mayor valor; en empate, mantén la primera encontrada.
 - No se permite fuerza bruta, backtracking, programación dinámica ni búsqueda local.
 
+## 💻 Versiones de la solución
+
+Este ejercicio incluye dos implementaciones del mismo procedimiento de construcción voraz aleatorizada:
+
+| Archivo | Representación de los candidatos |
+|---|---|
+| [main_rcl_indices.cpp](main_rcl_indices.cpp) | Construye una RCL explícita de índices y utiliza un vector para marcar los objetos seleccionados. |
+| [main_ordenamiento.cpp](main_ordenamiento.cpp) | Mantiene los objetos pendientes ordenados por valor/peso descendente. La RCL corresponde a un prefijo del vector y los objetos seleccionados se eliminan. |
+
+Ambas versiones consideran únicamente objetos que caben en la capacidad restante y conservan la mochila de mayor valor entre varias construcciones.
+
+Se compilan y ejecutan por separado. Consulta la [guía de compilación y ejecución](../../../EJECUCION.md).
+
+El orden de los candidatos puede diferir entre versiones; utilizar la misma semilla no garantiza obtener exactamente la misma selección.
+
 ⬅️ [Volver al índice](..)

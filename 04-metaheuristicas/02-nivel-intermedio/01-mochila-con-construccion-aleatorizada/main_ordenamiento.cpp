@@ -36,15 +36,15 @@ void calcularValorEntrePeso(vector<Objeto>& objetos) {
 
 int contarCandidatosRCL(const vector<Objeto>& pendientes, double umbral) {
     int cantidadRCL = 0;
-    while (true) {
-        if (pendientes[cantidadRCL].valorPorPeso < umbral) break;
+    while (cantidadRCL < pendientes.size() &&
+        pendientes[cantidadRCL].valorPorPeso >= umbral) {
         cantidadRCL++;
     }
     return cantidadRCL;
 }
 
 void eliminarObjetosQueNoCaben(vector<Objeto>& pendientes,
-                    int capacidadRestante) {
+                               int capacidadRestante) {
     for (int i = 0; i < pendientes.size();) {
         if (pendientes[i].peso > capacidadRestante) {
             pendientes.erase(pendientes.begin() + i);
@@ -66,8 +66,8 @@ Mochila construirMochila(const vector<Objeto>& objetos) {
         eliminarObjetosQueNoCaben(pendientes, mochila.capacidadRestante);
         if (pendientes.empty()) break;
 
-        double beta = pendientes.front().valorPorPeso;  // mejor valor
-        double tau = pendientes.back().valorPorPeso;    // peor valor
+        double beta = pendientes.front().valorPorPeso; // mejor valor
+        double tau = pendientes.back().valorPorPeso; // peor valor
         double umbral = beta + ALFA * (tau - beta);
 
         // La RCL ocupa las primeras posiciones del vector

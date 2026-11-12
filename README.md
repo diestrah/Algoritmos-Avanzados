@@ -14,6 +14,12 @@ Este repositorio reúne ejercicios del curso de Algoritmos Avanzados, organizado
 | 4 | [🔥 Metaheurísticas](04-metaheuristicas) | Estrategias generales que guían la búsqueda de soluciones en problemas muy complejos. | ✅ Disponible |
 | 5 | 🧬 Algoritmos Evolutivos | Algoritmos inspirados en la evolución natural: selección, cruce y mutación. | 🚧 Próximamente |
 
+
+## ▶️ Compilación y ejecución
+
+Consulta la [guía de compilación y ejecución](EJECUCION.md)
+para abrir los proyectos y ejecutar las distintas versiones.
+
 ## 📖 Material recomendado
 
 - *Introduction to the Design & Analysis of Algorithms* - Anany Levitin

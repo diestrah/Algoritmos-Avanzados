@@ -14,7 +14,7 @@ struct Objeto{
     char nombre;
     int peso;
     int valor;
-    double valorEntrePeso;
+    double valorPorPeso;
 };
 
 struct Mochila{
@@ -24,9 +24,10 @@ struct Mochila{
     int capacidadRestante;
 };
 
-void calcularRazon(vector<Objeto>& objetos) {
+
+void calcularValorEntrePeso(vector<Objeto>& objetos) {
     for (int i = 0; i < objetos.size(); i++) {
-        objetos[i].valorEntrePeso = (double)objetos[i].valor / objetos[i].peso;
+        objetos[i].valorPorPeso = (double)objetos[i].valor / objetos[i].peso;
     }
 }
 
@@ -39,8 +40,8 @@ vector<int> generarRCL(const vector<Objeto>& objetos,
     // El criterio para los máximos y minimos será el cociente entre valor y el peso
     for (int i = 0; i < objetos.size(); i++) {
         if (!estado[i] && capacidad >= objetos[i].peso) {
-            minimo = min(minimo, objetos[i].valorEntrePeso);
-            maximo = max(maximo, objetos[i].valorEntrePeso);
+            minimo = min(minimo, objetos[i].valorPorPeso);
+            maximo = max(maximo, objetos[i].valorPorPeso);
             hayCandidatos = true;
         }
     }
@@ -56,10 +57,11 @@ vector<int> generarRCL(const vector<Objeto>& objetos,
     for (int i = 0; i < objetos.size(); i++) {
         if (!estado[i] &&
             objetos[i].peso <= capacidad &&
-            objetos[i].valorEntrePeso >= umbral) {
+            objetos[i].valorPorPeso >= umbral) {
             rcl.push_back(i);
         }
     }
+
     return rcl;
 }
 
@@ -91,7 +93,7 @@ Mochila construirMochila(const vector<Objeto>& objetos) {
     return mochila;
 }
 
-Mochila construirMochilaConMejorValor(const vector<Objeto>& objetos) {
+Mochila buscarMejorMochila(const vector<Objeto>& objetos) {
     Mochila mejorMochila;
     mejorMochila.valorTotal = INT_MIN;
 
@@ -129,9 +131,12 @@ int main() {
         {'E', 15, 45},
         {'F', 8, 16},
     };
-    calcularRazon(objetos);
+
+    calcularValorEntrePeso(objetos);
     srand(time(nullptr));
-    Mochila mochila = construirMochilaConMejorValor(objetos);
+
+    Mochila mochila = buscarMejorMochila(objetos);
     imprimir(mochila);
+
     return 0;
 }

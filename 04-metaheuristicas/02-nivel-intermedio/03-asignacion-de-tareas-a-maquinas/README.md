@@ -56,4 +56,20 @@ El resultado y el orden de asignación pueden variar según el criterio, la semi
 - Conserva la asignación de menor tiempo de finalización; en empate, mantén la primera.
 - No se permite fuerza bruta, backtracking, programación dinámica ni búsqueda local.
 
+
+## 💻 Versiones de la solución
+
+Este ejercicio incluye dos implementaciones del mismo procedimiento de construcción voraz aleatorizada:
+
+| Archivo | Representación de los candidatos |
+|---|---|
+| [main_rcl_indices.cpp](main_rcl_indices.cpp) | Construye una RCL explícita de índices y utiliza un vector para marcar las tareas asignadas. |
+| [main_ordenamiento.cpp](main_ordenamiento.cpp) | Ordena las tareas por tiempo descendente. La RCL corresponde a un prefijo del vector de pendientes y cada tarea se elimina después de seleccionarla. |
+
+Ambas versiones asignan la tarea elegida a la máquina con menor carga y conservan la mejor asignación entre varias construcciones.
+
+Se compilan y ejecutan por separado. Consulta la [guía de compilación y ejecución](../../../EJECUCION.md).
+
+El orden de los candidatos puede diferir entre versiones; utilizar la misma semilla no garantiza obtener exactamente la misma asignación.
+
 ⬅️ [Volver al índice](..)

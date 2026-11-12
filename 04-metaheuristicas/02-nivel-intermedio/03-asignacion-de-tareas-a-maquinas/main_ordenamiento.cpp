@@ -25,43 +25,34 @@ struct Asignacion{
     int tiempoMaximo;
 };
 
-vector<int> construirRCL(const vector<Tarea>& tareas,
-                         const vector<bool>& asignadas) {
-    int minimo = INT_MAX;
-    int maximo = INT_MIN;
-    for (int i = 0; i < tareas.size(); i++) {
-        if (!asignadas[i]) {
-            minimo = min(minimo, tareas[i].tiempo);
-            maximo = max(maximo, tareas[i].tiempo);
-        }
+bool mayorTiempo(const Tarea& a, const Tarea& b) {
+    return a.tiempo > b.tiempo;
+}
+
+int contarCandidatosRCL(const vector<Tarea>& pendientes, double umbral) {
+    int cantidadRCL = 0;
+    while (cantidadRCL < pendientes.size() &&
+        pendientes[cantidadRCL].tiempo >= umbral) {
+        cantidadRCL++;
     }
-
-    if (maximo == INT_MIN) return {};
-
-    // Preferiremos las tareas de mayor duración
-    double umbral = maximo - ALFA * (maximo - minimo);
-    vector<int> rcl; // Almacenará los índices de las tareas candidatas
-
-    for (int i = 0; i < tareas.size(); i++) {
-        if (!asignadas[i] &&
-            tareas[i].tiempo >= umbral) {
-            rcl.push_back(i);
-        }
-    }
-    return rcl;
+    return cantidadRCL;
 }
 
 Asignacion asignarTareas(const vector<Tarea>& tareas) {
     vector<Maquina> maquinas(MAQUINAS, {{}, 0});
-    vector<bool> asignadas(tareas.size(), false);
+    // Las tareas ya se encuentran ordenadas descendentemente por duración
+    vector<Tarea> pendientes = tareas;
 
-    while (true) {
-        vector<int> rcl = construirRCL(tareas, asignadas);
-        if (rcl.empty()) break;
+    while (!pendientes.empty()) {
+        int beta = pendientes.front().tiempo; // Contiene el máximo tiempo
+        int tau = pendientes.back().tiempo; // Contiene el mínimo tiempo
+        double umbral = beta - ALFA * (beta - tau);
 
-        int posicion = rand() % rcl.size(); // Almacena la posición del RCL a usar
-        int indiceTarea = rcl[posicion]; // Almacena el índice de la tarea a usar
-        char nombreTarea = tareas[indiceTarea].nombre;
+        // La RCL ocupa las primeras posiciones del vector
+        int cantidadRCL = contarCandidatosRCL(pendientes, umbral);
+        int posicion = rand() % cantidadRCL;
+        Tarea tareaElegida = pendientes[posicion];
+        pendientes.erase(pendientes.begin() + posicion);
 
         // Se le asignará la tarea a la máquina con menor carga
         int indiceMaquina = 0, menorCarga = INT_MAX;
@@ -72,9 +63,8 @@ Asignacion asignarTareas(const vector<Tarea>& tareas) {
             }
         }
 
-        maquinas[indiceMaquina].tareas.push_back(nombreTarea);
-        maquinas[indiceMaquina].cargaTotal += tareas[indiceTarea].tiempo;
-        asignadas[indiceTarea] = true;
+        maquinas[indiceMaquina].tareas.push_back(tareaElegida.nombre);
+        maquinas[indiceMaquina].cargaTotal += tareaElegida.tiempo;
     }
 
     // El tiempo de finalización corresponde a la mayor carga
@@ -88,12 +78,14 @@ Asignacion asignarTareas(const vector<Tarea>& tareas) {
 
 Asignacion buscarMejorAsignacion(const vector<Tarea>& tareas) {
     Asignacion mejor{{}, INT_MAX};
+
     for (int i = 0; i < ITERACIONES; i++) {
         Asignacion asignacion = asignarTareas(tareas);
         if (asignacion.tiempoMaximo < mejor.tiempoMaximo) {
             mejor = asignacion;
         }
     }
+
     return mejor;
 }
 
@@ -129,8 +121,12 @@ int main() {
         {'H', 4},
         {'I', 7},
     };
+
     srand(time(nullptr));
+    sort(tareas.begin(), tareas.end(), mayorTiempo);
+
     Asignacion asignacion = buscarMejorAsignacion(tareas);
     imprimir(asignacion);
+
     return 0;
 }

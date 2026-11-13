@@ -69,4 +69,20 @@ El resultado y el orden de los cortes pueden variar según el criterio, la semil
 - Conserva la distribución de menor merma; en empate, mantén la primera encontrada.
 - No se permite fuerza bruta, backtracking, programación dinámica ni búsqueda local.
 
+## 💻 Versiones de la solución
+
+Este ejercicio incluye dos implementaciones del mismo procedimiento de construcción voraz aleatorizada:
+
+| Archivo | Representación de los candidatos |
+|---|---|
+| [main_rcl_indices.cpp](main_rcl_indices.cpp) | Construye una RCL explícita de índices y mantiene las cantidades restantes en un vector independiente. |
+| [main_ordenamiento.cpp](main_ordenamiento.cpp) | Mantiene los pedidos ordenados por longitud descendente y elimina los que se completan. La RCL corresponde a un tramo del vector que contiene longitudes que caben en el rollo actual. |
+
+Ambas versiones conservan los pedidos que no caben para los siguientes rollos y buscan la construcción de menor merma entre varias iteraciones.
+
+Se compilan y ejecutan por separado. Consulta la [guía de compilación y ejecución](../../../EJECUCION.md).
+
+El orden de los candidatos puede diferir entre versiones; utilizar la misma semilla no garantiza obtener exactamente la misma distribución de cortes.
+
+
 ⬅️ [Volver al índice](..)

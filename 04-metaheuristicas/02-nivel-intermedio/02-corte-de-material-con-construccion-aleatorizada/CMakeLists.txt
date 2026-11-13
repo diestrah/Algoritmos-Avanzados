@@ -3,4 +3,5 @@ project(corte_de_material_con_construccion_aleatorizada)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(corte_de_material_con_construccion_aleatorizada main.cpp)
+add_executable(corte_de_material_rcl_indices main_rcl_indices.cpp)
+add_executable(corte_de_material_ordenamiento main_ordenamiento.cpp)

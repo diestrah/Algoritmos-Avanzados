@@ -29,29 +29,29 @@ struct Construccion{
 vector<int> generarRCL(const vector<Segmento>& segmentos,
                        const vector<int>& cantidades,
                        int espacioDisponible) {
-    int minimo = INT_MAX;
-    int maximo = INT_MIN;
+    int tau = INT_MAX;  // Almacena la longitud minima
+    int beta = INT_MIN; // Almacena la longitud maxima
     // Calculamos los extremos entre las longitudes pendientes que caben
     for (int i = 0; i < (int)segmentos.size(); i++) {
         if (cantidades[i] > 0 &&
             segmentos[i].longitud <= espacioDisponible) {
-            minimo = min(minimo, segmentos[i].longitud);
-            maximo = max(maximo, segmentos[i].longitud);
+            tau = min(tau, segmentos[i].longitud);
+            beta = max(beta, segmentos[i].longitud);
         }
     }
 
     // Si no hay candidatos, se termina de cortar el rollo actual
-    if (maximo == INT_MIN) return {};
+    if (beta == INT_MIN) return {};
 
     // Favorecemos las longitudes mayores: establecemos la mínima aceptada
-    double umbral = maximo - ALFA * (maximo - minimo);
+    double umbral = beta - ALFA * (beta - tau);
     vector<int> rcl;
 
     for (int i = 0; i < (int)segmentos.size(); i++) {
         if (cantidades[i] > 0 &&
             segmentos[i].longitud <= espacioDisponible &&
             segmentos[i].longitud >= umbral) {
-            // Guardamo los índices de los pedidos aceptados en la RCL
+            // Guardamos los índices de los pedidos aceptados en la RCL
             rcl.push_back(i);
         }
     }

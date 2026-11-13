@@ -69,4 +69,19 @@ El resultado puede variar según el criterio, la semilla y el generador aleatori
 - En empate, mantén la primera; si ninguna construcción se completa, informa ese resultado.
 - No se permite fuerza bruta, backtracking, programación dinámica ni búsqueda local.
 
+## 💻 Versiones de la solución
+
+Este ejercicio incluye dos implementaciones del mismo procedimiento de construcción voraz aleatorizada:
+
+| Archivo | Representación de los candidatos |
+|---|---|
+| [main_rcl_indices.cpp](main_rcl_indices.cpp) | Construye una RCL explícita de índices y utiliza un vector para marcar los motorizados asignados. La matriz de tarifas conserva sus posiciones originales. |
+| [main_ordenamiento.cpp](main_ordenamiento.cpp) | Mantiene los motorizados pendientes ordenados por la tarifa de la ciudad actual. La RCL corresponde a un prefijo de los candidatos factibles. Elimina al motorizado elegido y las tarifas de la ciudad atendida. |
+
+Ambas versiones respetan el límite de costo por envío, impiden reutilizar motorizados y comparan únicamente asignaciones completas.
+
+Se compilan y ejecutan por separado. Consulta la [guía de compilación y ejecución](../../../EJECUCION.md).
+
+El orden de los candidatos puede diferir entre versiones; utilizar la misma semilla no garantiza obtener exactamente la misma asignación.
+
 ⬅️ [Volver al índice](..)

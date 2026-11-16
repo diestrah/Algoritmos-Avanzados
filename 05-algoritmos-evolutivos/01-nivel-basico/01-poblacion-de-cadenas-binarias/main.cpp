@@ -4,20 +4,22 @@
 #include <cstdlib>
 using namespace std;
 
-#define CANTIDAD_GENES 6
+#define CANT_GENES 6
 #define INDIVIDUOS 5
 
 vector<vector<int>> generarPoblacion() {
     vector<vector<int>> poblacion;
+    srand(time(nullptr));
 
     for (int i = 0; i < INDIVIDUOS; i++) {
-        vector<int> individuo;
+        vector<int> individuo(CANT_GENES);
 
-        for (int j = 0; j < CANTIDAD_GENES; j++) {
-            int gen = rand() % 2;
-            individuo.push_back(gen);
+        // Generamos individuo
+        for (int j = 0; j < CANT_GENES; j++) {
+            individuo[j] = rand() % 2;
         }
 
+        // Agregamos el nuevo individuo a la poblacion
         poblacion.push_back(individuo);
     }
 
@@ -39,15 +41,12 @@ int calcularFitness(const vector<int>& individuo) {
 }
 
 void imprimirPoblacion(const vector<vector<int>>& poblacion) {
-    cout << "Poblacion inicial: " << endl;
-
     for (int i = 0; i < poblacion.size(); i++) {
         cout << "Individuo " << i + 1 << ": ";
         imprimirIndividuo(poblacion[i]);
         int fitness = calcularFitness(poblacion[i]);
         cout << "| Fitness: " << fitness << endl;
     }
-
 }
 
 void imprimirMejorIndividuo(const vector<vector<int>>& poblacion) {
@@ -69,9 +68,9 @@ void imprimirMejorIndividuo(const vector<vector<int>>& poblacion) {
 }
 
 int main() {
-    srand(time(nullptr));
     vector<vector<int>> poblacion = generarPoblacion();
 
+    cout << "Poblacion inicial: " << endl;
     imprimirPoblacion(poblacion);
     imprimirMejorIndividuo(poblacion);
 

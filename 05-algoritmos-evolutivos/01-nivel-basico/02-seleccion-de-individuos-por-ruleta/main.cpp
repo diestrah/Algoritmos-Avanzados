@@ -6,7 +6,7 @@
 using namespace std;
 
 #define INDIVIDUOS 5
-#define CANTIDAD_GENES 6
+#define CANT_GENES 6
 #define TASA_SELECCION 0.6
 #define TAMANO_TORNEO 3
 
@@ -17,12 +17,12 @@ using namespace std;
 
 vector<vector<int>> generarPoblacion() {
     vector<vector<int>> poblacion;
+    srand(time(nullptr));
 
     for (int i = 0; i < INDIVIDUOS; i++) {
-        vector<int> individuo;
-        for (int j = 0; j < CANTIDAD_GENES; j++) {
-            int gen = rand() % 2;
-            individuo.push_back(gen);
+        vector<int> individuo(CANT_GENES);
+        for (int j = 0; j < CANT_GENES; j++) {
+            individuo[j] = rand() % 2;
         }
         poblacion.push_back(individuo);
     }
@@ -41,7 +41,6 @@ int calcularFitness(const vector<int>& individuo) {
     for (int i = 0; i < individuo.size(); i++) {
         fitness += individuo[i];
     }
-
     return fitness;
 }
 
@@ -63,11 +62,11 @@ vector<int> calcularSupervivencia(const vector<vector<int>>& poblacion) {
     vector<int> supervivencia;
     int acumulado = 0;
 
+    // supervivencia[i] contiene la suma de fitness desde el individuo 0 hasta i
     for (int i = 0; i < poblacion.size(); i++) {
         acumulado += calcularFitness(poblacion[i]);
         supervivencia.push_back(acumulado);
     }
-
     // El ultimo acumulado es igual al fitness total
     return supervivencia;
 }
@@ -76,35 +75,41 @@ vector<vector<int>> seleccionPorRuleta(const vector<vector<int>>& poblacion) {
     vector<vector<int>> padres;
     vector<int> supervivencia = calcularSupervivencia(poblacion);
 
-    // Almacenamos el fitness total
+    // supervivencia.back() contiene el fitness total
     int sumaFitness = supervivencia.back();
 
     // TASA_SELECCION indica la proporcion que utilizaremos como padres
-    int cantidadPadres = round(poblacion.size() * TASA_SELECCION);
+    int cantidadPadres = (int)round(poblacion.size() * TASA_SELECCION);
 
     // Generamos la poblacion de padres
     for (int i = 0; i < cantidadPadres; i++) {
         int indice;
+
         if (sumaFitness == 0) {
-            // Caso 1: todos tienen fitness cero
-            // → todos tienen la misma probabilidad
+            // Si todos tienen fitness 0, elegimos al azar
             indice = rand() % poblacion.size();
         }
         else {
-            // Caso 2: el fitness total es positivo
-            // → sorteamos un "ticket"
             int ticket = rand() % sumaFitness;
-
             indice = 0;
+
+            // Buscamos hasta encontrar el primer cuantil mayor al ticket
             while (ticket >= supervivencia[indice]) {
-                // Avanzará hasta encontrar el primer acumulado mayor al ticket
+                /* El indice avanzará hasta encontrar el primer acumulado mayor al ticket
+                 * Ejemplo de representacion grafica de como funciona la eleccion del padre:
+
+                 *  Individuo  fitness  Acumulado  Probabilidad  Tickets
+                 *      0         3         3          3/9       0, 1, 2
+                 *      1         2         5          5/9       3, 4
+                 *      2         4         9          9/9       5, 6, 7, 8
+                 */
+
                 indice++;
             }
         }
 
         // Agregamos el individuo elegido como padre
         padres.push_back(poblacion[indice]);
-        // NOTA: No lo eliminamos de la poblacion
     }
 
     return padres;
@@ -114,7 +119,7 @@ vector<vector<int>> seleccionPorTorneo(const vector<vector<int>>& poblacion) {
     vector<vector<int>> padres;
 
     // TASA_SELECCION indica qué cantidad utilizaremos como padres
-    int cantidadPadres = round(poblacion.size() * TASA_SELECCION);
+    int cantidadPadres = (int)round(poblacion.size() * TASA_SELECCION);
 
     // Generamos la poblacion de padres
     for (int i = 0; i < cantidadPadres; i++) {
@@ -141,8 +146,6 @@ vector<vector<int>> seleccionPorTorneo(const vector<vector<int>>& poblacion) {
 }
 
 int main() {
-    srand(time(nullptr));
-
     vector<vector<int>> poblacion = generarPoblacion();
     cout << "Poblacion inicial:\n" << endl;
     imprimirPoblacion(poblacion);

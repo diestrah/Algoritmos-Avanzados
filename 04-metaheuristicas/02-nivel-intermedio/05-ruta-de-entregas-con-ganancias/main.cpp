@@ -48,15 +48,15 @@ vector<int> construirRCL(const vector<vector<int>>& matriz,
 }
 
 Ruta generarRuta(const vector<vector<int>>& matriz,
-                 const vector<int>& ganancias) {
-    vector<bool> visitadas(ganancias.size(), false);
+                 const vector<int>& entregas) {
+    vector<bool> visitadas(entregas.size(), false);
     Ruta ruta{string(1, INICIO), 0};
 
     int ciudadActual = INICIO - 'A';
     visitadas[ciudadActual] = true;
 
     while (true) {
-        vector<int> rcl = construirRCL(matriz, ganancias, visitadas, ciudadActual);
+        vector<int> rcl = construirRCL(matriz, entregas, visitadas, ciudadActual);
         if (rcl.empty()) break;
 
         int posicion = rand() % rcl.size();
@@ -64,7 +64,7 @@ Ruta generarRuta(const vector<vector<int>>& matriz,
 
         ruta.recorrido += " -> ";
         ruta.recorrido += (char)('A' + siguienteCiudad);
-        ruta.gananciaTotal += ganancias[siguienteCiudad];
+        ruta.gananciaTotal += entregas[siguienteCiudad];
         ciudadActual = siguienteCiudad;
         visitadas[ciudadActual] = true;
     }

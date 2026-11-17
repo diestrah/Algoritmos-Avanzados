@@ -17,17 +17,13 @@ Se considera una **aberración** cualquier cromosoma que supere la capacidad de 
 
 Implementa un algoritmo genético que:
 
-1. Genere una población inicial de individuos válidos.
+1. Genere una población inicial de individuos válidos y distintos.
 2. Seleccione padres mediante ruleta proporcional al fitness.
 3. Genere un hijo por cada pareja ordenada de padres con índices distintos, utilizando cruce de un punto.
 4. Aplique mutación independiente a cada gen de los hijos.
 5. Descarte las aberraciones después de la mutación.
-6. Conserve los mejores individuos entre la población actual y los hijos válidos.
-
-Además, compara dos formas de generar la población inicial:
-
-- **Generación aleatoria con rechazo:** genera cromosomas binarios y descarta los que sean aberraciones.
-- **Construcción aleatoria factible:** construye cada individuo incorporando objetos en orden aleatorio, sin superar la capacidad.
+6. Elimine los cromosomas repetidos del conjunto formado por la población actual y los hijos válidos.
+7. Conserve los mejores individuos para la siguiente generación.
 
 ## 🧪 Ejemplo de ejecución
 
@@ -63,82 +59,82 @@ Los resultados pueden variar según la semilla, la población inicial y las elec
 
 - Hay al menos dos objetos.
 - Los pesos, beneficios y la capacidad son enteros positivos.
-- Existe al menos un objeto cuyo peso no supera la capacidad.
+- Los vectores o estructuras de objetos mantienen una correspondencia fija con las posiciones del cromosoma.
 - Cada objeto puede seleccionarse como máximo una vez.
-- Los vectores de pesos y beneficios tienen la misma longitud.
 - Cada cromosoma tiene un gen por objeto y contiene únicamente valores `0` o `1`.
-- La población contiene al menos dos individuos y se permiten cromosomas repetidos.
+- La población contiene al menos dos individuos.
+- Existen al menos tantos cromosomas válidos distintos como individuos se requieren en la población.
 - Todos los individuos incorporados a la población deben ser válidos.
+- La población inicial y cada población resultante del reemplazo deben contener cromosomas distintos.
 
 ### 🌱 Población inicial
 
-Implementa las dos estrategias siguientes.
-
-**Generación aleatoria con rechazo:**
-
 - Genera cada gen aleatoriamente como `0` o `1`.
 - Descarta los cromosomas que excedan la capacidad o no seleccionen objetos.
-- Repite hasta completar el tamaño de población indicado.
-
-**Construcción aleatoria factible:**
-
-- Comienza cada individuo con todos sus genes en cero.
-- Genera un orden aleatorio de los objetos, sin repetir índices.
-- Recorre ese orden e incluye cada objeto si cabe en la capacidad restante.
-- Si un objeto no cabe, continúa con el siguiente.
-- Examina todos los objetos una vez.
-- Repite el procedimiento para construir cada individuo de la población.
-
-Como existe al menos un objeto que cabe, cada construcción debe seleccionar al menos uno.
+- Descarta también los cromosomas que ya estén presentes en la población.
+- Continúa hasta reunir exactamente `cantidadIndividuos` individuos válidos y distintos.
 
 ### 🎯 Fitness y selección
 
 - Comprueba la factibilidad mediante el peso total.
 - Evalúa la calidad mediante el beneficio total.
-- **Peso y beneficio cumplen funciones distintas:** no utilices el peso como fitness.
-- Selecciona padres mediante ruleta con reemplazo.
+- **Peso y beneficio cumplen funciones distintas:** el fitness corresponde al beneficio.
+- Selecciona padres mediante ruleta proporcional al fitness.
+- Puedes utilizar fitness acumulados para determinar a qué individuo pertenece cada ticket.
 - Calcula la cantidad de padres redondeando `cantidadIndividuos × tasaSeleccion`.
-- Elige parámetros que produzcan al menos dos padres.
+- `tasaSeleccion` pertenece al intervalo `(0, 1]`. Elige parámetros que produzcan al menos dos padres.
+- La selección es con reemplazo: un mismo individuo puede aparecer varias veces en el vector de padres.
 - Como los beneficios son positivos y ningún individuo está vacío, el fitness total de la población siempre es positivo.
 
-### ✂️ Cruce y mutación
+### ✂️ Cruce
 
-- Genera un hijo por cada pareja ordenada de índices distintos del vector de padres.
+- Recorre todas las parejas ordenadas de índices distintos del vector de padres.
+- Las parejas `(i, j)` y `(j, i)` generan hijos mediante llamadas independientes.
+- Los padres pueden tener cromosomas iguales debido a la selección con reemplazo.
+- Cada pareja genera un único hijo.
 - Siempre aplica el cruce de un punto.
 - Elige el corte entre `1` y `cantidadGenes - 1`, inclusive.
 - El hijo recibe el segmento inicial del primer padre y el segmento final del segundo.
+- Los padres originales no se modifican.
+
+Con `k` padres seleccionados se generan `k × (k - 1)` hijos antes de descartar aberraciones y eliminar clones.
+
+### 🔄 Mutación y validación
+
 - Cada gen del hijo tiene una decisión independiente de mutación.
 - Si un gen muta, invierte su valor.
-- Para sorteos con `rand() % 100`, utiliza una probabilidad de mutación en `[0, 1]`, expresable en pasos de `0.01`.
-- Comprueba la validez después de mutar.
+- La probabilidad de mutación pertenece al intervalo `[0, 1]`.
+- Para sorteos con `rand() % 100`, utiliza probabilidades expresables en pasos de `0.01`.
+- Comprueba la validez del hijo después de aplicar la mutación.
 - Descarta los hijos inválidos sin repararlos ni generar reemplazos.
+
+### 🧬 Eliminación de clones
+
+- Dos individuos son clones si sus cromosomas coinciden en todas las posiciones.
+- Elimina los clones después de reunir la población actual y los hijos válidos, antes de ordenar y recortar.
+- Conserva una sola copia de cada cromosoma.
+- Puedes utilizar un `map<vector<int>, bool>` para identificar los cromosomas distintos.
+- El orden del mapa no representa la calidad de los individuos; posteriormente debes ordenarlos por fitness.
+- No elimines repeticiones del vector de padres: la selección sigue siendo con reemplazo.
 
 ### 🏆 Reemplazo y finalización
 
-- Conserva los `cantidadIndividuos` mejores entre la población actual y los hijos válidos.
+- Ordena los individuos únicos de mayor a menor beneficio.
 - En caso de empate de beneficio, prioriza al individuo de menor peso.
 - Si también empatan en peso, puedes conservar cualquier orden.
-- No elimines clones.
+- Conserva exactamente `cantidadIndividuos` individuos.
+- Los individuos originales permanecen en el conjunto de candidatos, por lo que siempre existen suficientes cromosomas distintos para conservar el tamaño de población.
 - Ejecuta todas las generaciones indicadas.
-- Muestra el mejor beneficio de la población inicial y de cada nueva generación.
+- Muestra el mejor beneficio de cada nueva generación.
 - Al finalizar, muestra el cromosoma, los objetos seleccionados, el peso, el beneficio y la capacidad restante.
 
-### 🧪 Comparación de inicializaciones
+El mejor beneficio no debe disminuir entre generaciones.
 
-- Ejecuta el algoritmo **10 veces por cada estrategia de inicialización**.
-- Mantén iguales los datos y los parámetros del algoritmo.
-- Utiliza la misma lista de 10 semillas para ambas estrategias e inicializa el generador una vez al comienzo de cada ejecución.
-- Para cada estrategia, registra:
-  - El promedio del mejor beneficio final.
-  - El mayor beneficio encontrado.
-  - La cantidad de cromosomas candidatos descartados durante la inicialización, por ejecución.
-- Comenta las diferencias observadas. Una estrategia no tiene que superar necesariamente a la otra.
-
-### 🛠️ Organización
+## 🛠️ Organización
 
 - Separa el cálculo del peso, el cálculo del fitness y la detección de aberraciones.
-- Implementa una función para cada estrategia de inicialización.
-- Reutiliza y adapta las funciones de selección, cruce, mutación y reemplazo del ejercicio anterior.
+- Implementa funciones para generar la población, seleccionar padres, cruzar, mutar, eliminar clones y seleccionar supervivientes.
+- Inicializa la semilla aleatoria una sola vez al comenzar cada ejecución.
 - No se permite resolver mediante fuerza bruta, backtracking ni programación dinámica.
 
 El algoritmo busca buenas selecciones, pero **no garantiza encontrar el beneficio óptimo**.

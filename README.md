@@ -12,7 +12,7 @@ Este repositorio reúne ejercicios del curso de Algoritmos Avanzados, organizado
 | 2 | [🧩 Programación Dinámica](02-programacion-dinamica) | Resolver subproblemas que se repiten y guardar sus resultados para no recalcularlos. | ✅ Disponible |
 | 3 | [🧭 Heurísticas](03-heuristicas) | Reglas prácticas que encuentran buenas soluciones rápidamente, sin garantizar la óptima. | ✅ Disponible |
 | 4 | [🔥 Metaheurísticas](04-metaheuristicas) | Estrategias generales que guían la búsqueda de soluciones en problemas muy complejos. | ✅ Disponible |
-| 5 | 🧬 Algoritmos Evolutivos | Algoritmos inspirados en la evolución natural: selección, cruce y mutación. | 🚧 Próximamente |
+| 5 | 🧬 Algoritmos Evolutivos | Algoritmos inspirados en la evolución natural: selección, cruce y mutación. | ✅ Disponible |
 
 
 ## ▶️ Compilación y ejecución

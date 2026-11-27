@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 4.4)
+project(seleccion_de_trabajos_en_lineas_de_produccion)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(seleccion_de_trabajos_en_lineas_de_produccion main.cpp)
